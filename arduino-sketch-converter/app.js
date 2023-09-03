@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const multer = require('multer');
 const { exec } = require('child_process');
 const fs = require('fs');
 
 const app = express();
 const port = 8080;
+app.use(cors());
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
